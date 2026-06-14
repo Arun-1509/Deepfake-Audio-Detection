@@ -136,7 +136,7 @@ Two parallel feature streams are fused through a learned attention gate that dyn
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/deepfake-audio-detection.git
+git clone https://github.com/yourusername/Deepfake-Audio-Detection.git
 cd deepfake-audio-detection
 
 # Install dependencies
