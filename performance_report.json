@@ -1,0 +1,44 @@
+{
+  "model_architecture": "Dual-Stream MLP + Attention Gate: wav2vec2-base frozen (multi-layer weighted avg: layers 6,9,12) + Extended Acoustic Features (191-dim) + BatchNorm + Residual",
+  "preprocessing": {
+    "sample_rate": 16000,
+    "duration_seconds": 4.0,
+    "normalization": "peak normalization to [-1, 1]"
+  },
+  "feature_extraction": {
+    "stream_1": "wav2vec2-base (frozen) \u2014 mean-pooled embeddings averaged across hidden layers 6, 9, 12 (768-dim)",
+    "stream_2": "Extended acoustic features (189-dim): MFCC-mean (40) + MFCC-std (40) + Delta-MFCC (40) + Delta2-MFCC (40) + Spectral Contrast (7) + Spectral Bandwidth (2) + Spectral Flatness (2) + Chroma (12) + ZCR (2) + Spectral Rolloff (2) + RMS (2)",
+    "fusion": "Attention Gate \u2014 per-sample dynamic weighting of both streams"
+  },
+  "training": {
+    "epochs_run": 25,
+    "max_epochs": 25,
+    "batch_size": 256,
+    "optimizer": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.08,
+    "scheduler": "OneCycleLR with cosine annealing",
+    "label_smoothing": 0.08,
+    "dropout": "0.45 (projection) / 0.40 (classifier)",
+    "augmentation": "Genuine: Gaussian noise, time stretch, pitch shift, shift  |  Deepfake: light Gaussian noise, shift",
+    "regularisation": "BatchNorm, Dropout 0.35-0.45, weight_decay=0.08, grad_clip=1.0"
+  },
+  "inference": {
+    "threshold": "EER-optimal (not fixed 0.5)",
+    "optimal_threshold": 0.042
+  },
+  "metrics": {
+    "overall_accuracy": 0.9089,
+    "eer": 0.0911,
+    "macro_f1": 0.9089,
+    "accuracy_genuine": 0.9090,
+    "accuracy_deepfake": 0.9089,
+    "roc_auc": 0.931
+  },
+  "thresholds_met": {
+    "accuracy_ge_80": true,
+    "eer_le_12": true,
+    "f1_ge_80": true,
+    "per_class_acc_ge_75": true
+  }
+}
