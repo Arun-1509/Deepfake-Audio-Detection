@@ -1,6 +1,9 @@
 # Deepfake Audio Detection
 ### MARS Open Projects 2026 — Problem Statement 2
 
+##  Live Demo
+👉 [Open Streamlit App](https://k2ubt8wpzpcamkk7o2zpae.streamlit.app/)
+
 A hybrid deep learning system that classifies speech recordings as **Genuine (Human)** or **Deepfake (AI-Generated)** with 90.89% accuracy and 9.11% EER on the Fake-or-Real dataset.
 
 ---
