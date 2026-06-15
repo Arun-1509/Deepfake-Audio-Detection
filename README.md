@@ -5,7 +5,7 @@
 👉 [Open Streamlit App](https://k2ubt8wpzpcamkk7o2zpae.streamlit.app/)
 
 ## 📹 Demo Video
-👉 [Watch Demo](your-youtube-or-drive-link-here)
+👉 [Watch Demo](https://drive.google.com/drive/folders/1qHEr6A0COiWk3VIl86iVT1blkwYOQZff?usp=sharing)
 
 ##  Test Files Used for Demo
 Dataset: [The Fake-or-Real Dataset](https://www.kaggle.com/datasets/mohammedabdeldayem/the-fake-or-real-dataset)
