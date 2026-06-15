@@ -264,7 +264,7 @@ def load_model():
     from transformers import Wav2Vec2Model, Wav2Vec2FeatureExtractor
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    ckpt          = torch.load(CHECKPOINT, map_location=device)
+    ckpt          = torch.load(CHECKPOINT, map_location=device,weights_only=False)
     cfg           = ckpt.get("model_config", {})
     n_acou        = cfg.get("n_acou_feats", 191)
     opt_threshold = ckpt.get("opt_threshold", 0.5)
