@@ -7,6 +7,12 @@
 ## 📹 Demo Video
 👉 [Watch Demo](your-youtube-or-drive-link-here)
 
+##  Test Files Used for Demo
+Dataset: [The Fake-or-Real Dataset](https://www.kaggle.com/datasets/mohammedabdeldayem/the-fake-or-real-dataset)
+- Genuine sample: `for-norm/test/real/`
+- Deepfake sample: `for-norm/test/fake/`
+
+  
 A hybrid deep learning system that classifies speech recordings as **Genuine (Human)** or **Deepfake (AI-Generated)** with 90.89% accuracy and 9.11% EER on the Fake-or-Real dataset.
 
 ---
